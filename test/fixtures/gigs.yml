@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  production_schedule: MyText
+  guest_list: MyText
+  type: 
+  status: MyString
+
+two:
+  location: MyString
+  production_schedule: MyText
+  guest_list: MyText
+  type: 
+  status: MyString
