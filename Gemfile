@@ -28,7 +28,7 @@ gem "simple_calendar", "~> 2.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'autoprefixer-rails'
 
 gem 'faker', '~> 1.6', '>= 1.6.3'
