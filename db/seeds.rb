@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.delete_all
+Calendar.delete_all
+Gig.delete_all
+Invoice.delete_all
+SetList.delete_all
+Song.delete_all
 
 10.times do 
     User.create(
@@ -38,7 +44,8 @@ Calendar.create
         start_time: DateTime.now - 3, 
         end_time: DateTime.now,
         client: Faker::Name.name,
-        calendar_id: 1
+        calendar_id: 1,
+        title: Faker::Lorem.word
     )
 end
 
@@ -60,4 +67,4 @@ SetList.create(gig_id: 1)
     )
 end
 
-"You have created a bunch of stuff"
+puts "You have created a bunch of stuff"
