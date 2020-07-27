@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_060551) do
+ActiveRecord::Schema.define(version: 2020_07_27_153649) do
 
   create_table "calendars", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_07_27_060551) do
     t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provider"
+    t.string "uid"
   end
 
 end
