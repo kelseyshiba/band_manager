@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :set_lists
   resources :invoices
   resources :gigs
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
   get '/login', to: 'sessions#new'

@@ -1,0 +1,10 @@
+<h1>Admins Only - view All Users</h1>
+
+<%= @users.each do |user| %>
+<div>
+<strong>Username:</strong><%= user.username %>
+<strong>Email: </strong><%= user.email %>
+<strong>Admin: </strong><%= user.admin %>
+<<%= link_to 'Edit User', edit_user_path %>>
+</div>
+<% end %>

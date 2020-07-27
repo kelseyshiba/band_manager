@@ -1,0 +1,64 @@
+<h2> Gig Details </h2><br>
+
+<%= form_for :gig do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+
+<%= f.label :event_type %>
+<%= f.text_field :event_type %><br>
+
+<%= f.label :status %>
+<%= f.text_field :status%><br>
+
+<%= f.label :client %>
+<%= f.text_field :client %><br>
+
+<%= f.label :street_address %>
+<%= f.text_field :street_address %><br>
+
+<%= f.label :secondary_address %>
+<%= f.text_field :secondary_address %><br>
+
+<%= f.label :city %>
+<%= f.text_field :city %><br>
+
+<%= f.label :state %>
+<%= f.text_field :state %><br>
+
+<%= f.label :zip %>
+<%= f.text_field :zip %><br>
+
+<%= f.label :start_time %>
+<%= f.text_field :start_time %><br>
+
+<%= f.label :end_time %>
+<%= f.text_field :end_time %><br>
+
+<%= f.label :production_schedule %>
+<%= f.text_area :production_schedule %><br>
+
+<%= f.label :guest_list %>
+<%= f.text_area :guest_list %><br><br>
+
+<p>Assign Musicians</p>
+<%= f.fields_for :user do |f| %>
+
+<% end %>
+
+<%= f.submit %>
+
+<% end %>
+
+
+
+
+
+
+    
+
+    
+   
+
+   
+  
+ 

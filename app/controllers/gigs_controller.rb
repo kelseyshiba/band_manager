@@ -1,6 +1,8 @@
 class GigsController < ApplicationController
-    before_action :set_gig, only: [:show]
+    before_action :set_gig, only: [:show, :edit]
     before_action :require_login, only: [:show]
+    before_action :if_admin?, only: [:edit]
+
 
     def index
         @gigs = Gig.all
@@ -8,6 +10,10 @@ class GigsController < ApplicationController
 
     def show
         
+    end
+
+    def edit
+
     end
 
     private

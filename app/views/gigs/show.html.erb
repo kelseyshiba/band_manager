@@ -9,10 +9,11 @@
 
 <div>
     <strong>Location:</strong><br> <%= @gig.full_location %>
-</div>
+</div><br>
 
-
-<h2>Edit this Gig Admin Only</h2>
-<%= link_to 'Back to All Gigs', gigs_path %>
-<%= link_to 'Main Page', main_path %>
+<% if if_admin? %>
+    <%= link_to 'Edit This Gig', edit_gig_path %><br>
+<% end %>
+<%= link_to 'Back to All Gigs', gigs_path %><br>
+<%= link_to 'Main Page', main_path %><br><br>
 <%= button_to 'Logout', logout_path %>

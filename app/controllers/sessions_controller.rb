@@ -13,8 +13,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to main_path
     else
-      flash[:notice] = "Please submit a valid login"
-      redirect_to login_path
+      flash[:notice] = "Please submit a valid login or create an account"
+      render :new
     end
   end
 

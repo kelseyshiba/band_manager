@@ -7,13 +7,14 @@
 
     <% gigs.each do |gig| %>
       <div>
-        <%= gig.title %>
+        <%= link_to "#{gig.title}", gig_path(gig) %>
       </div>
     <% end %>
 <% end %>
 
 <% @gigs.each do |gig| %>
 <div>
+<strong>Title:</strong> <%= gig.title %><br>
 <strong>Date:</strong> <%= gig.formatted_start_time %><br>
 <strong>Event Type:</strong> <%= gig.event_type %><br>
 <strong>Location:</strong> <%= "#{gig.city}, #{gig.state}" %><br>
@@ -23,3 +24,5 @@
 <%= link_to 'See More Details', gig_path(gig) %><br><br>
 </div>
 <% end %>
+
+

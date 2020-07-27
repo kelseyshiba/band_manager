@@ -1,0 +1,9 @@
+<h1>Admins only</h1>
+<h3>Information for <%= @user.username %> </h3>
+Username: <%= @user.username %>
+Password: <%= @user.password %>
+Email: <%= @user.email %>
+Admin: <%= @user.admin %>
+
+<%= link_to 'Edit', edit_user_path %>
+<%= link_to 'View All Users', users_path %>
