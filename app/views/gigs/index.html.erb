@@ -1,6 +1,7 @@
 <h1>Show All the Gigs</h1><br>
 <h2>Calendar View</h2>
 <h3>View All Your Gigs</h3>
+
 <% @gigs.each do |gig| %>
 <strong>Date:</strong> <%= gig.formatted_start_time %><br>
 <strong>Event Type:</strong> <%= gig.event_type %><br>
