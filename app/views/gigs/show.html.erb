@@ -1,14 +1,14 @@
-<h1>Gig Information</h1><br>
-<h2>Calendar View</h2>
-<h3>See All Your Gigs</h3>
+<h2>Gig Information for <%= @gig.formatted_date_title %></h2><br>
+<h3>Calendar View</h3><br>
+<h3>See All Your Gigs</h3><br>
 
 <strong>Start:</strong> <%= @gig.formatted_start_time %><br>
 <strong>End:</strong> <%= @gig.formatted_end_time %><br>
-<strong>Type:</strong> <%= @gig.gig_type %><br>
+<strong>Type:</strong> <%= @gig.event_type %><br>
 <strong>Status:</strong><%= @gig.status %><br>
 
 <div>
-    <strong>Location:</strong> <%= @gig.full_location %>
+    <strong>Location:</strong><br> <%= @gig.full_location %>
 </div>
 
 

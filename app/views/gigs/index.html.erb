@@ -2,10 +2,20 @@
 <h2>Calendar View</h2>
 <h3>View All Your Gigs</h3>
 
+<%= month_calendar events: @gigs do |date, gigs| %>
+  <%= date.day %>
+
+    <% gigs.each do |gig| %>
+      <div>
+        <%= gig.formatted_start_time %>
+      </div>
+    <% end %>
+<% end %>
+
 <% @gigs.each do |gig| %>
 <strong>Date:</strong> <%= gig.formatted_start_time %><br>
 <strong>Event Type:</strong> <%= gig.event_type %><br>
-<strong>Location:</strong> <%= gig.city, gig.state %><br>
+<strong>Location:</strong> <%= "#{gig.city}, #{gig.state}" %><br>
 <strong>Client:</strong> <%=gig.client %>
 <strong>Status:</strong> <%= gig.status %><br>
 

@@ -1,7 +1,9 @@
-<h1>Main Control Page for Users/Musicians</h1>
+<h1>Main Control Page for Users/Musicians</h1><br>
+<h2>Hello, <%= current_user.username %>!</h2><br>
 
 <%= link_to 'Show All Gigs', gigs_path %>
 <h2>Show All My Gigs</h2>
 <h2>Show All My Invoices</h2>
 <h2>Admin can see all invoices</h2>
+<%= link_to 'Logout', logout_path %>
 
