@@ -2,13 +2,12 @@
 <h2>Calendar View</h2>
 <h3>View All Your Gigs</h3>
 <% @gigs.each do |gig| %>
-Start: <%= gig.formatted_start_time %><br>
-End : <%= gig.formatted_end_time %><br>
-Type: <%= gig.gig_type %><br>
-Status :<%= gig.status %><br>
+<strong>Date:</strong> <%= gig.formatted_start_time %><br>
+<strong>Event Type:</strong> <%= gig.event_type %><br>
+<strong>Location:</strong> <%= gig.city, gig.state %><br>
+<strong>Client:</strong> <%=gig.client %>
+<strong>Status:</strong> <%= gig.status %><br>
 
-<div>
-    Location: <%= gig.full_location %>
-</div>
+
 <%= link_to 'See More Details', gig_path(gig) %><br><br>
 <% end %>

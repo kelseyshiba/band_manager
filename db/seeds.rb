@@ -28,7 +28,7 @@ Calendar.create
 
 20.times do 
     Gig.create(
-        gig_type: "rehearsal", 
+        event_type: "rehearsal", 
         status: "pending", 
         street_address: Faker::Address.street_address, 
         secondary_address: Faker::Address.secondary_address, 
@@ -37,6 +37,7 @@ Calendar.create
         zip: Faker::Address.zip, 
         start_time: DateTime.now - 3, 
         end_time: DateTime.now,
+        client: Faker::Name.name,
         calendar_id: 1
     )
 end

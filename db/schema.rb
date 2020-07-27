@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_225247) do
+ActiveRecord::Schema.define(version: 2020_07_27_060551) do
 
   create_table "calendars", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_07_26_225247) do
   create_table "gigs", force: :cascade do |t|
     t.text "production_schedule"
     t.text "guest_list"
-    t.string "gig_type"
+    t.string "event_type"
     t.string "status"
     t.integer "calendar_id"
     t.datetime "created_at", precision: 6, null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_07_26_225247) do
     t.string "zip"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.string "client"
     t.index ["calendar_id"], name: "index_gigs_on_calendar_id"
   end
 
