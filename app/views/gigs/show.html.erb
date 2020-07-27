@@ -1,0 +1,17 @@
+<h1>Gig Information</h1><br>
+<h2>Calendar View</h2>
+
+Start: <%= @gig.formatted_start_time %><br>
+End : <%= @gig.formatted_end_time %><br>
+Type: <%= @gig.gig_type %><br>
+Status :<%= @gig.status %><br>
+
+<div>
+    Location: <%= @gig.full_location %>
+</div>
+<% end %>
+
+<h3>See All Your Gigs</h3>
+<%= link_to 'Back to All Gigs', gigs_path %>
+<%= link_to 'Main Page', main_path %>
+<%= button_to 'Logout', logout_path %>
