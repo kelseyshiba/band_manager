@@ -1,7 +1,15 @@
-<h1>Sign Up!</h1>
+<%= users_header %>
 <br>
 <%= flash[:notice] %><br>
 <%= form_for :user do |f| %>
+<p><%= f.label :name %>
+<%= f.text_field :name %>
+</p>
+
+<p><%= f.label :instrument %>
+<%= f.text_field :instrument %>
+</p>
+
 <p><%= f.label :username %>
 <%= f.text_field :username %>
 </p>
