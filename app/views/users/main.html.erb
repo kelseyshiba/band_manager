@@ -3,7 +3,8 @@
 
 <%= link_to 'All Gigs', gigs_path %><br>
 <%= link_to 'All My Gigs', user_gigs_path(current_user) %><br>
-<h2>Admin can see all invoices</h2>
-<h2>Show All My Invoices</h2>
+<%= show_admin_links(current_user) %>
+<%= link_to 'My Invoices', %>
+<%= link_to 'All Users', users_path %>
 <%= button_to 'Logout', logout_path %>
 

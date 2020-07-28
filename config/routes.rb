@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :songs
   resources :set_lists
   resources :invoices
-  resources :gigs 
+  resources :gigs
   resources :users do 
     resources :gigs, only: [:index, :show]
   end

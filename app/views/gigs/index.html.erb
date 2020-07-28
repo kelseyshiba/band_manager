@@ -1,6 +1,8 @@
-<h1>Gigs List</h1><br>
-<%= flash[:notice] %>
+<%= gig_list_header(current_user)%><br>
 <%= gig_link_header(current_user) %><br><br>
+<%= flash[:notice] %><br>
+
+<%= link_to 'Main Page', main_path %><br>
 <%= month_calendar events: @gigs do |date, gigs| %>
   <%= date.day %>
 
