@@ -147,3 +147,22 @@ GigsUser.create(user_id: 10, gig_id: 17)
 GigsUser.create(user_id: 9, gig_id: 18)
 GigsUser.create(user_id: 9, gig_id: 19)
 GigsUser.create(user_id: 9, gig_id: 20)
+
+
+User.find(1)
+user1 = _
+user1.name = Faker::Name.name
+user1.instrument = "trombone"
+user1.save
+
+i = 1
+loop do
+    user = User.find(i)
+    user.name = Faker::Name.name
+    user.instrument = Faker::Music.instrument
+    user.save
+    i += 1
+    if i == 16
+        break
+    end
+end
