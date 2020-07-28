@@ -35,4 +35,8 @@ class Gig < ApplicationRecord
         end
     end
 
+    def self.order_by_date
+        order(start_time: :asc)
+    end
+
 end

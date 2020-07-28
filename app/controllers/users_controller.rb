@@ -13,7 +13,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to main_path
         else
-            flash[:notice] = "Please submit all fields with valid information."
+            flash[:notice] = @user.errors.full_messages
             redirect_to signup_path
         end
     end

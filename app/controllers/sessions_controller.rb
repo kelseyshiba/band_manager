@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to main_path
     else
-      flash[:notice] = "Please submit a valid login or create an account"
+      flash[:notice] = "Please login or create an account."
       render :new
     end
   end
@@ -24,12 +24,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to main_path
     else
+      flash[:notice] = user.errors.full_messages.join(", ")
       redirect_to login_path
     end
   end
 
   def destroy
     session.clear
+    flash[:notice] = "You have successfully logged out."
     redirect_to root_path
   end
 
