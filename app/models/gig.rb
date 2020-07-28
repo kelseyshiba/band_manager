@@ -8,10 +8,6 @@ class Gig < ApplicationRecord
         parts = [self.street_address, self.secondary_address, self.city, self.state, self.zip]
         parts.reject!(&:blank?)
         parts.join('<br/>').html_safe
-
-        # "#{self.street_address}"\
-        # "#{self.secondary_address}"\
-        # "#{self.city}, #{self.state} #{self.zip}"
     end
 
     def formatted_start_time
@@ -25,4 +21,15 @@ class Gig < ApplicationRecord
     def formatted_date_title
         self.start_time.strftime("%B %d, %Y")
     end
+
+    def user_attributes=(user_attributes)
+            user = User.find_or_create_by(name: user_attributes[:name])
+            user.instrument = user_attributes[:instrument]
+            user.email = "kelsey.shiba@gmail.com"
+            user.password = SecureRandom.hex(16)
+            user.username = user_attributes[:name].gsub(" ", ".").downcase
+            user.save
+            self.users << user
+    end
+
 end

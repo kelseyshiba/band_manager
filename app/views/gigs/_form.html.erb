@@ -1,4 +1,5 @@
 <h2> Gig Details </h2><br>
+<%= flash[:notice] %>
 
 <%= f.label :title %>
 <%= f.text_field :title %><br>
@@ -28,10 +29,10 @@
 <%= f.text_field :zip %><br>
 
 <%= f.label :start_time %>
-<%= f.text_field :start_time %><br>
+<%= f.datetime_local_field :start_time %><br>
 
 <%= f.label :end_time %>
-<%= f.text_field :end_time %><br>
+<%= f.datetime_local_field :end_time %><br>
 
 <%= f.label :production_schedule %>
 <%= f.text_area :production_schedule %><br>
@@ -40,14 +41,17 @@
 <%= f.text_area :guest_list %><br><br>
 
 <p>Assign Musicians</p>
-<%= f.collection_check_boxes :user, User.all, :id, :name%>
-<%= f.fields_for :user do |user_attributes| %>
-<%= user_attributes.label :name %>
-<%= user.text_field :name %>
-<%= %>
-    
+<div>
+<%= f.collection_check_boxes :user_ids, User.all, :id, :name %><br>
+</div><br>
+<p>Or Add a New Musician</p>
+<%= f.fields_for :user_attributes, @gig.users.build do |user_fields| %>
+<%= user_fields.label :name %>
+<%= user_fields.text_field :name %><br>
+<%= user_fields.label :instrument %>
+<%= user_fields.text_field :instrument %><br><br>
 <% end %>
-
+    
 <%= f.submit %>
 
 
