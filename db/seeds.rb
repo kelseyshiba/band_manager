@@ -67,4 +67,10 @@ SetList.create(gig_id: 1)
     )
 end
 
+
+
+
+
 puts "You have created a bunch of stuff"
+
+
