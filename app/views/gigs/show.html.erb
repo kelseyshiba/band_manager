@@ -13,8 +13,11 @@
     <strong>Location:</strong><br> <%= @gig.full_location %>
 </div><br>
 
-<strong>Musicians:</strong><h3>List all the musicians that belong to this gig</h3>
+<strong>Musicians:</strong><br>
 
+<% @gig.users.each do |user| %>
+<%= user.name %>,<%= user.instrument %><br>
+<% end %>
 
 <% if if_admin? %>
     <%= link_to 'Edit This Gig', edit_gig_path %><br>
