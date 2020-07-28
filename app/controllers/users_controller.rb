@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :require_login, only: [:edit]
     before_action :if_admin?, only: [:edit, :index, :show]
     before_action :set_user, only: [:edit, :show]
     
@@ -26,7 +27,14 @@ class UsersController < ApplicationController
     end
 
     def update
-    
+        @user = User.find_by_id(params[:id])
+        @user.update(user_params)
+        if @user.save
+            redirect_to user_path(@user)
+        else
+            flash[:notice] = "User information was not updated."
+            redirect_to gigs_path
+        end
     end
 
     def index

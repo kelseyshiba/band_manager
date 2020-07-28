@@ -1,9 +1,13 @@
 <h1>Admins only</h1>
-<h3>Information for <%= @user.username %> </h3>
-Username: <%= @user.username %>
-Password: <%= @user.password %>
-Email: <%= @user.email %>
-Admin: <%= @user.admin %>
+<h3>Information for <%= @user.name %> </h3><br>
+<strong>Instrument: </strong><%= @user.instrument %><br>
+<strong>Username: </strong><%= @user.username %><br>
+<strong>Password: </strong><%= @user.password %><br>
+<strong>Email: </strong><%= @user.email %><br>
+<strong>Admin: </strong><%= @user.admin %><br>
 
-<%= link_to 'Edit', edit_user_path %>
-<%= link_to 'View All Users', users_path %>
+<%= link_to 'Edit User', edit_user_path %><br>
+<%= link_to 'View All Users', users_path %><br>
+<%= link_to 'All Gigs', gigs_path %><br>
+<%= link_to 'All Gigs for this Musician', user_gigs_path(@user) %>
+<%= button_to 'Logout', logout_path %>

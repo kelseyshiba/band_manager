@@ -1,7 +1,6 @@
-<%= users_header %>
-<br>
+<%= users_header %><br>
 <%= flash[:notice] %><br>
-<%= form_for :user do |f| %>
+
 <p><%= f.label :name %>
 <%= f.text_field :name %>
 </p>
@@ -24,7 +23,7 @@
 </p>
 <%= f.submit %>
 
-<% end %>
+
 
 
 
