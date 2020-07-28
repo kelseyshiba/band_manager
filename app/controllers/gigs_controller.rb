@@ -1,16 +1,15 @@
 class GigsController < ApplicationController
     before_action :set_gig, only: [:show, :edit]
-    before_action :require_login, only: [:show]
-    before_action :if_admin?, only: [:edit]
+    before_action :require_login, only: [:show, :index, :edit]
+    before_action :if_admin?, only: [:edit, :new]
 
     def new
         @gig = Gig.new
     end
 
     def create
-        #  "gig"=>{"title"=>"Another Day", "event_type"=>"Wedding", "status"=>"Pending", "client"=>"Craig Basarich", "street_address"=>"4444 Washington Street", "secondary_address"=>"", "city"=>"Greenville", "state"=>"SC", "zip"=>"27253", "start_time"=>"2020-07-27T22:50", "end_time"=>"2020-07-27T23:50", "production_schedule"=>"Hello all", "guest_list"=>"Mom\r\nDad", "user_ids"=>[""], "user_attributes"=>{"name"=>"Zakk Efron", "instrument"=>"Trombone"}}
         @gig = Gig.new(gig_params)
-        if @gig.valid?
+        if @gig.save
             redirect_to gig_path(@gig)
         else
             flash[:notice] = "Please create a valid gig"

@@ -1,7 +1,7 @@
 class Gig < ApplicationRecord
     has_many :set_lists
-    has_many :gigs_users
-    has_many :users, through: :gigs_users
+    has_many :gig_users
+    has_many :users, through: :gig_users
 
     def full_location
         return 'No Address Available' if self.street_address.blank?

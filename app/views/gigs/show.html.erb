@@ -9,10 +9,12 @@
 <strong>Status:</strong><%= @gig.status %><br>
 <strong>Production Schedule:</strong><%= @gig.production_schedule %><br>
 <strong>Guest List:</strong><%= @gig.guest_list %><br>
-<strong>Musicians:</strong><h3>List all the musicians that belong to this gig</h3>
 <div>
     <strong>Location:</strong><br> <%= @gig.full_location %>
 </div><br>
+
+<strong>Musicians:</strong><h3>List all the musicians that belong to this gig</h3>
+
 
 <% if if_admin? %>
     <%= link_to 'Edit This Gig', edit_gig_path %><br>

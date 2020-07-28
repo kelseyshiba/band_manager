@@ -3,8 +3,8 @@ class User < ApplicationRecord
     validates :username, uniqueness: true, presence: true
     validates :email, uniqueness: true, presence: true
     
-    has_many :gigs_users
-    has_many :gigs, through: :gigs_users
+    has_many :gig_users
+    has_many :gigs, through: :gig_users
     has_many :invoices
 
 
