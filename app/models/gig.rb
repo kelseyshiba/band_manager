@@ -23,13 +23,16 @@ class Gig < ApplicationRecord
     end
 
     def user_attributes=(user_attributes)
-            user = User.find_or_create_by(name: user_attributes[:name])
-            user.instrument = user_attributes[:instrument]
-            user.email = "kelsey.shiba@gmail.com"
-            user.password = SecureRandom.hex(16)
-            user.username = user_attributes[:name].gsub(" ", ".").downcase
-            user.save
-            self.users << user
+        if user_attributes[:name].present? && user_attributes[:instrument].present?
+            user = User.find_or_create_by(name: user_attributes[:name]) do |u|
+                u.instrument = user_attributes[:instrument]
+                u.email = "kelsey.shiba@gmail.com"
+                u.password = SecureRandom.hex(16)
+                u.username = user_attributes[:name].gsub(" ", ".").downcase
+                u.save
+                self.users << u
+            end
+        end
     end
 
 end

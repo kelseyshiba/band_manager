@@ -1,9 +1,9 @@
-<h1>Main Control Page for Users/Musicians</h1><br>
-<h2>Hello, <%= current_user.username %>!</h2><br>
+<h1>Main</h1><br>
+<h2>Hello, <%= current_user.name.split(" ").map(&:capitalize).join(" ") %>!</h2><br>
 
-<%= link_to 'Show All Gigs', gigs_path %>
-<h2>Show All My Gigs</h2>
-<h2>Show All My Invoices</h2>
+<%= link_to 'All Gigs', gigs_path %><br>
+<%= link_to 'All My Gigs', user_gigs_path(current_user) %><br>
 <h2>Admin can see all invoices</h2>
+<h2>Show All My Invoices</h2>
 <%= button_to 'Logout', logout_path %>
 
