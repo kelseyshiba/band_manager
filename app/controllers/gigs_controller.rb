@@ -18,7 +18,16 @@ class GigsController < ApplicationController
     end
 
     def index
-        @gigs = Gig.all
+        if params[:user_id]
+            if !User.find_by_id(params[:user_id]).nil?
+                @gigs = User.find_by_id(params[:user_id]).gigs
+            else
+                flash[:notice] = "No gigs listed for this musician."
+                redirect_to gigs_path
+            end
+        else
+            @gigs = Gig.all
+        end
     end
 
     def show

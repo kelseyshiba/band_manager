@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   resources :songs
   resources :set_lists
   resources :invoices
-  resources :gigs
-  resources :users, only: [:show, :edit]
+  resources :gigs 
+  resources :users do 
+    resources :gigs, only: [:index, :show]
+  end
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
   get '/login', to: 'sessions#new'

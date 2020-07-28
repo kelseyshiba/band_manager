@@ -1,10 +1,12 @@
 <h1>Admins Only - view All Users</h1>
 
-<%= @users.each do |user| %>
+<% @users.each do |user| %>
 <div>
-<strong>Username:</strong><%= user.username %>
-<strong>Email: </strong><%= user.email %>
-<strong>Admin: </strong><%= user.admin %>
-<<%= link_to 'Edit User', edit_user_path %>>
+<strong>Name:</strong><%= user.name %><br>
+<strong>Instrument:</strong><%= user.instrument %><br>
+<strong>Username:</strong><%= user.username %><br>
+<strong>Email: </strong><%= user.email %><br>
+<strong>Admin: </strong><%= user.admin %><br>
+<%= link_to 'Edit User', edit_user_path(user) %><br><br>
 </div>
 <% end %>
