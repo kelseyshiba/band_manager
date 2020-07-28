@@ -2,11 +2,14 @@
 <h3>Calendar View</h3><br>
 <h3>See All Your Gigs</h3><br>
 
+<strong>Title:</strong> <%= @gig.title %><br>
 <strong>Start:</strong> <%= @gig.formatted_start_time %><br>
 <strong>End:</strong> <%= @gig.formatted_end_time %><br>
 <strong>Type:</strong> <%= @gig.event_type %><br>
 <strong>Status:</strong><%= @gig.status %><br>
-
+<strong>Production Schedule:</strong><%= @gig.production_schedule %><br>
+<strong>Guest List:</strong><%= @gig.guest_list %><br>
+<strong>Musicians:</strong><h3>List all the musicians that belong to this gig</h3>
 <div>
     <strong>Location:</strong><br> <%= @gig.full_location %>
 </div><br>

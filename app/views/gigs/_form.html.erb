@@ -1,6 +1,5 @@
 <h2> Gig Details </h2><br>
 
-<%= form_for :gig do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %><br>
 
@@ -41,13 +40,17 @@
 <%= f.text_area :guest_list %><br><br>
 
 <p>Assign Musicians</p>
-<%= f.fields_for :user do |f| %>
-
+<%= f.collection_select :user, User.all, :id, :name%>
+<%= f.fields_for :user do |user_attributes| %>
+<%= user_attributes.label :username %>
+<%= user.text_field :username %>
+<%= %>
+    
 <% end %>
 
 <%= f.submit %>
 
-<% end %>
+
 
 
 

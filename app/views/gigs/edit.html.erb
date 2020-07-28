@@ -1,2 +1,4 @@
 <h1>Admin only</h1>
-<%= render partial: 'form', locals: {gig: @gig} %>
+<%= form_for :gig, url: gig_path, method: :patch do |f| %>
+<%= render partial: 'form', locals: {f: f} %>
+<% end %>
