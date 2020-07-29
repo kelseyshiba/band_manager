@@ -1,6 +1,7 @@
 class InvoicesController < ApplicationController
     before_action :set_invoice, only: [:show, :edit]
-
+    before_action :authorized, only: [:index, :edit, :show, :new]
+    
     def new
         @invoice = Invoice.new
         @user = User.find_by_id(params[:user_id])

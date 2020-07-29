@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :require_login, only: [:edit]
+    before_action :authorized, only: [:index, :main, :show, :edit, :new]
     before_action :if_admin?, only: [:edit, :index, :show]
     before_action :set_user, only: [:edit, :show]
     
