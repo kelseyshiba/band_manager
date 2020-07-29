@@ -1,4 +1,6 @@
-    <h1> All Invoices </h1>
+    <h2> <%= invoice_header(current_user) %> </h2>
+    <p><%= invoice_link_header(current_user)%> </p>
+
     <% @invoices.each do |invoice| %>
     <strong>Date: </strong><%= invoice.formatted_date %><br>
     <strong>Amount: $</strong><%= invoice.amount %><br>
@@ -7,3 +9,5 @@
     <strong>Gig: </strong><%= invoice.gig_id %><br>
     <strong></strong><%= link_to 'More Details', user_invoice_path(invoice.user, invoice) %><br><br>
     <% end %>
+
+    <%= button_to 'Logout', logout_path %>

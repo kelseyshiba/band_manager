@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :gigs
   resources :users do 
     resources :gigs, only: [:index, :show]
-    resources :invoices, only: [:new, :index, :show, :edit, :update]
+    resources :invoices
   end
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"

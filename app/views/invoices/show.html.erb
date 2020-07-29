@@ -1,7 +1,8 @@
-<h2>Invoice for <%= "#{@invoice.user.name}" %></h2>
+<h2>Invoice for <%="#{@invoice.user.name}" %></h2>
 <p><%= link_to 'Back to All Invoices', invoices_path %></p>
+<p><%= link_to 'Back to My Invoices', user_invoices_path(current_user) %></p>
 
-
+<h4>Details</h4>
 <strong>Date: </strong><%= @invoice.formatted_date %><br>
 <strong>Amount: $</strong><%= @invoice.amount %><br>
 <strong>Description: </strong><%= @invoice.description %><br>
@@ -11,16 +12,18 @@
  <strong>Status: </strong><%= @invoice.gig.gig_status %><br>
  <strong>Client: </strong><%= @invoice.gig.client %><br><br>
 
-<strong>Musician</strong><br><br>
+<h4>Musician</h4>
 <strong>Name: </strong><%= @invoice.user.name %><br>
 <strong>Instrument: </strong><%= @invoice.user.instrument %><br>
 <strong>Email: </strong><%= @invoice.user.email %><br><br>
 
 <% if if_admin? %>
-    <%= link_to 'Edit This Invoice', edit_user_invoice_path(@invoice.user, @invoice) %><br>
     <%= link_to 'All Invoices', invoices_path %><br>
+    <%= link_to 'Edit This Invoice', edit_user_invoice_path(@invoice.user, @invoice) %><br>
 <% end %>
+<%= link_to 'Delete Invoice', user_invoice_path(@invoice.user, @invoice), data: {confirm: 'Are you sure?'}, method: :delete %><br>
 
 <%= link_to 'Back to All Gigs', gigs_path %><br>
+<%= link_to 'Back to My Gigs', user_gigs_path(current_user) %><br>
 <%= link_to 'Main Page', main_path %><br><br>
 <%= button_to 'Logout', logout_path %>

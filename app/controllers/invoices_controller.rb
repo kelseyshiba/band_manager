@@ -3,7 +3,7 @@ class InvoicesController < ApplicationController
 
     def new
         @invoice = Invoice.new
-        @user = User.find_by_id(params[:id])
+        @user = User.find_by_id(params[:user_id])
     end
     
     def create
@@ -48,6 +48,12 @@ class InvoicesController < ApplicationController
             flash[:notice] = @invoice.errors.full_messages.join(",")
             render :edit
         end
+    end
+
+    def destroy
+        Invoice.find_by_id(params[:id]).destroy
+        user = User.find_by_id(params[:user_id])
+        redirect_to user_invoices_path(user)
     end
 
     private
