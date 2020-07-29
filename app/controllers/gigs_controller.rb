@@ -1,6 +1,6 @@
 class GigsController < ApplicationController
     before_action :set_gig, only: [:show, :edit]
-    before_action :require_login, only: [:show, :index, :edit]
+    before_action :require_login, only: [:show, :index, :edit, :new]
     before_action :if_admin?, only: [:edit, :new]
 
     def new

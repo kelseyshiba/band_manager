@@ -2,21 +2,21 @@
 <%= flash[:notice] %><br>
 
 <p><%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name, placeholder: 'Enter Name' %>
 </p>
 
 <p><%= f.label :instrument %>
-<%= f.text_field :instrument %>
+<%= f.text_field :instrument, placeholder: 'Enter Instrument' %>
 </p>
 
 <p><%= f.label :username %>
-<%= f.text_field :username %>
+<%= f.text_field :username, placeholder: 'Enter Username' %>
 </p>
 <p><%= f.label :password %>
-<%= f.password_field :password %>
+<%= f.password_field :password, placeholder: 'Enter Password' %>
 </p>
 <p><%= f.label :email %>
-<%= f.email_field :email %>
+<%= f.email_field :email, placeholder: 'Enter Email' %>
 </p>
 <p><%= f.label :admin %>
 <%= f.check_box :admin %>
