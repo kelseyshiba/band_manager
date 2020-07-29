@@ -1,4 +1,5 @@
 <h1>Main</h1><br>
+<%= flash[:error] %>
 <h2>Hello, <%= current_user.name.split(" ").map(&:capitalize).join(" ") %>!</h2><br>
 
 <%= link_to 'All Gigs', gigs_path %><br>
@@ -6,8 +7,6 @@
 <%= link_to 'My Invoices', user_invoices_path(current_user)%><br>
 
 <%= show_admin_links(current_user) %>
-<%= link_to 'All Invoices', invoices_path %><br>
-<%= link_to 'All Users', users_path %><br>
 
 <%= button_to 'Logout', logout_path %>
 

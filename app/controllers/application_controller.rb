@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
     end
 
     def not_found
-        raise ActionController::RoutingError.new('Not Found')
+        flash[:error] = "Sorry, that route was not found"
+        redirect_to main_path
     end
 end

@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to main_path
     else
       flash[:notice] = "Please login or create an account."
-      render :new
+      redirect_to login_path
     end
   end
 

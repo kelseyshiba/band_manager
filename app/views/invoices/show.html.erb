@@ -19,9 +19,9 @@
 
 <% if if_admin? %>
     <%= link_to 'All Invoices', invoices_path %><br>
-    <%= link_to 'Edit This Invoice', edit_user_invoice_path(@invoice.user, @invoice) %><br>
+    <%= link_to 'Edit This Invoice', edit_invoice_path(@invoice) %><br>
 <% end %>
-<%= link_to 'Delete Invoice', user_invoice_path(@invoice.user, @invoice), data: {confirm: 'Delete this Invoice?'}, method: :delete %><br>
+<%= link_to 'Delete Invoice', invoice_path(@invoice), data: {confirm: 'Delete this Invoice?'}, method: :delete %><br>
 
 <%= link_to 'Back to All Gigs', gigs_path %><br>
 <%= link_to 'Back to My Gigs', user_gigs_path(current_user) %><br>

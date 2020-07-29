@@ -26,8 +26,9 @@ class Gig < ApplicationRecord
         if user_attributes[:name].present? && user_attributes[:instrument].present?
             user = User.find_or_create_by(name: user_attributes[:name]) do |u|
                 u.instrument = user_attributes[:instrument]
-                u.email = "kelsey.shiba@gmail.com"
-                u.password = SecureRandom.hex(16)
+                u.email = "kelsey.shiba@gmail.com" ##FIX THIS
+                u.password = SecureRandom.hex(16) #make a sample pass, expires if they haven't signed up
+                #has_secure_password - reset password 
                 u.username = user_attributes[:name].gsub(" ", ".").downcase
                 u.save
                 self.users << u
@@ -37,6 +38,7 @@ class Gig < ApplicationRecord
 
     def self.order_by_date
         order(start_time: :asc)
+        #make sure you can write as scope
     end
 
 end

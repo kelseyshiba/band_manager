@@ -11,7 +11,7 @@ class InvoicesController < ApplicationController
         # <ActionController::Parameters {"authenticity_token"=>"67A06cF+rRMuLP/vFRblOPC4i9P0yuiKkZ0UTOmZJfhOUxUgFL3KQB7u6hZJr2Q7j8SAOo7vsrO5xHhy/7aQ8Q==", "invoice"=>{"date"=>"2020-07-29T10:03", "amount"=>"200.00", "description"=>"Hey this gig was fun!", "gig_id"=>"1", "user_id"=>"16"}, "commit"=>"Create Invoice", "controller"=>"invoices", "action"=>"create"} permitted: false>
         @invoice = Invoice.new(invoice_params)
         if @invoice.save
-            redirect_to user_invoice_path(current_user, @invoice)
+            redirect_to invoice_path(@invoice)
         else
             flash[:notice] = @invoice.errors.full_messages.join(", ")
             render :'invoices/new'
@@ -44,7 +44,7 @@ class InvoicesController < ApplicationController
         @invoice = Invoice.find_by_id(params[:id])
         @invoice.update(invoice_params)
         if @invoice.save 
-            redirect_to user_invoice_path(@invoice.user, @invoice)
+            redirect_to invoice_path(@invoice)
         else
             flash[:notice] = @invoice.errors.full_messages.join(",")
             render :edit
@@ -52,9 +52,8 @@ class InvoicesController < ApplicationController
     end
 
     def destroy
-        Invoice.find_by_id(params[:id]).destroy
-        user = User.find_by_id(params[:user_id])
-        redirect_to user_invoices_path(user)
+        invoice = Invoice.find_by_id(params[:id]).destroy
+        redirect_to user_invoices_path(current_user)
     end
 
     private

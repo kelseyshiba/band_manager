@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:index, :main, :show, :edit, :new]
+    before_action :authorized, only: [:index, :main, :show, :edit]
     before_action :if_admin?, only: [:edit, :index, :show]
     before_action :set_user, only: [:edit, :show]
     
@@ -17,8 +17,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to main_path
         else
-            flash[:notice] = @user.errors.full_messages
-            redirect_to signup_path
+            render :new
         end
     end
 
