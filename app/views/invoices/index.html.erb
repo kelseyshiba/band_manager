@@ -1,8 +1,9 @@
+    <h1> All Invoices </h1>
     <% @invoices.each do |invoice| %>
-    <strong>Date: </strong><%= invoice.date %>
-    <strong>Amount: $</strong><%= invoice.amount %>
-    <strong>Description: </strong><%= invoice.description %>
-    <strong>User: </strong><%= invoice.user_id %>
-    <strong>Gig: </strong><%= invoice.gig_id %>
-    <strong></strong><%= link_to 'Gig Invoice', invoice_path(invoice) %>
+    <strong>Date: </strong><%= invoice.formatted_date %><br>
+    <strong>Amount: $</strong><%= invoice.amount %><br>
+    <strong>Description: </strong><%= invoice.description %><br>
+    <strong>User: </strong><%= invoice.user_id %><br>
+    <strong>Gig: </strong><%= invoice.gig_id %><br>
+    <strong></strong><%= link_to 'More Details', invoice_path(invoice) %><br><br>
     <% end %>

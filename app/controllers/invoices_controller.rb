@@ -1,4 +1,10 @@
 class InvoicesController < ApplicationController
+    before_action :set_invoice, only: [:show, :edit]
+
+    def new
+
+    end
+    
     def index
         if params[:user_id]
             if !User.find_by_id(params[:user_id]).nil?
@@ -10,5 +16,23 @@ class InvoicesController < ApplicationController
         else
             @invoices = Invoice.all
         end
+    end
+
+    def show
+
+    end
+
+    def edit
+
+    end
+
+    def update
+
+    end
+
+    private
+
+    def set_invoice
+        @invoice = Invoice.find(params[:id])
     end
 end

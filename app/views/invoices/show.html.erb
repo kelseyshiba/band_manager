@@ -1,0 +1,26 @@
+<h2>Invoice for <%= "#{@invoice.user.name}" %></h2>
+<p><%= link_to 'Back to All Invoices', invoices_path %></p>
+
+
+<strong>Date: </strong><%= @invoice.formatted_date %><br>
+<strong>Amount: $</strong><%= @invoice.amount %><br>
+<strong>Description: </strong><%= @invoice.description %><br>
+
+<strong>Gig Info: </strong>
+ <strong>Title: </strong><%= @invoice.gig.title %><br>
+ <strong>Status: </strong><%= @invoice.gig.gig_status %><br>
+ <strong>Client: </strong><%= @invoice.gig.client %><br><br>
+
+<strong>Musician:</strong><br>
+<strong>Name:</strong><% @invoice.user.name %><br>
+<strong>Instrument: </strong><%= @invoice.user.instrument %><br>
+<strong>Email: </strong><%= @invoice.user.email %><br><br>
+
+<% if if_admin? %>
+    <%= link_to 'Edit This Invoice', edit_invoice_path %><br>
+    <%= link_to 'All Invoices', invoices_path %><br>
+<% end %>
+
+<%= link_to 'Back to All Gigs', gigs_path %><br>
+<%= link_to 'Main Page', main_path %><br><br>
+<%= button_to 'Logout', logout_path %>

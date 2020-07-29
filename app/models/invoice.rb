@@ -10,7 +10,13 @@ class Invoice < ApplicationRecord
     belongs_to :user
     belongs_to :gig
 
+    validates :date, presence: true
+
     def self.order_by_date
-        order(start_date: :asc)
+        order(date: :asc)
+    end
+
+    def formatted_date
+        self.date.strftime("%B %d, %Y, %I:%M%P")
     end
 end
