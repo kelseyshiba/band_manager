@@ -1,5 +1,5 @@
 <h1>Admins Only - view All Users</h1>
-
+<%= flash[:notice] %><br>
 <% @users.each do |user| %>
 <div>
 <strong>Name:</strong><%= user.name %><br>

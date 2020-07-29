@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     before_action :if_admin?, only: [:edit, :index, :show]
     before_action :set_user, only: [:edit, :show]
     
+    def index
+        @users = User.all
+    end
+
     def new 
         @user = User.new
     end
@@ -37,9 +41,12 @@ class UsersController < ApplicationController
         end
     end
 
-    def index
-        @users = User.all
+    def destroy
+        user = User.find_by_id(params[:id]).destroy
+        flash[:notice] = "User deleted."
+        redirect_to users_path
     end
+  
 
     private
 

@@ -50,6 +50,12 @@ class GigsController < ApplicationController
         end        
     end
 
+    def destroy
+        gig = Gig.find_by_id(params[:id]).destroy
+        flash[:notice] = "Gig deleted."
+        redirect_to gigs_path
+    end
+
     private
 
     def gig_params
