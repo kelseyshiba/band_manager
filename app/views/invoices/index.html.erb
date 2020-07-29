@@ -1,0 +1,8 @@
+    <% @invoices.each do |invoice| %>
+    <strong>Date: </strong><%= invoice.date %>
+    <strong>Amount: $</strong><%= invoice.amount %>
+    <strong>Description: </strong><%= invoice.description %>
+    <strong>User: </strong><%= invoice.user_id %>
+    <strong>Gig: </strong><%= invoice.gig_id %>
+    <strong></strong><%= link_to 'Gig Invoice', invoice_path(invoice) %>
+    <% end %>
