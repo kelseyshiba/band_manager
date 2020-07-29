@@ -14,4 +14,8 @@ module GigsHelper
             tag.h2("Gig List")
         end
     end
+
+    # def gig_date_display
+        
+    # end
 end

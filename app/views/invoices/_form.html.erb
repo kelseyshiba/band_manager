@@ -1,11 +1,20 @@
-<%= form_for :invoice %>
+
+<%= f.label :date %>
+<%= f.datetime_local_field :date %><br>
+
+<%= f.label :amount %>
+<%= f.number_field :amount, step: 0.00 %><br>
+
+<%= f.label :description %>
+<%= f.text_area :description %><br>
+
+<label>Select Gig Title</label>
+<%= f.collection_select :gig_id, Gig.all, :id, :title, include_blank: 'Please Choose the Title' %><br>
+<h4> gig_date_display </h4>
 
 
 
-    # t.datetime "date"
-    # t.float "amount"
-    # t.text "description"
-    # t.integer "user_id"
-    # t.datetime "created_at", precision: 6, null: false
-    # t.datetime "updated_at", precision: 6, null: false
-    # t.integer "gig_id"
+
+
+
+

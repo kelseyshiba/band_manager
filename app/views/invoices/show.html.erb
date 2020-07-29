@@ -11,13 +11,13 @@
  <strong>Status: </strong><%= @invoice.gig.gig_status %><br>
  <strong>Client: </strong><%= @invoice.gig.client %><br><br>
 
-<strong>Musician:</strong><br>
-<strong>Name:</strong><% @invoice.user.name %><br>
+<strong>Musician</strong><br><br>
+<strong>Name: </strong><%= @invoice.user.name %><br>
 <strong>Instrument: </strong><%= @invoice.user.instrument %><br>
 <strong>Email: </strong><%= @invoice.user.email %><br><br>
 
 <% if if_admin? %>
-    <%= link_to 'Edit This Invoice', edit_invoice_path %><br>
+    <%= link_to 'Edit This Invoice', edit_user_invoice_path(@invoice.user, @invoice) %><br>
     <%= link_to 'All Invoices', invoices_path %><br>
 <% end %>
 

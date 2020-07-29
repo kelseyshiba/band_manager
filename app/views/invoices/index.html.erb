@@ -5,5 +5,5 @@
     <strong>Description: </strong><%= invoice.description %><br>
     <strong>User: </strong><%= invoice.user_id %><br>
     <strong>Gig: </strong><%= invoice.gig_id %><br>
-    <strong></strong><%= link_to 'More Details', invoice_path(invoice) %><br><br>
+    <strong></strong><%= link_to 'More Details', user_invoice_path(invoice.user, invoice) %><br><br>
     <% end %>

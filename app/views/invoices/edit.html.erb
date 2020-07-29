@@ -1,0 +1,9 @@
+<h3>Edit Invoice</h3><br>
+<%= form_for ([@user, @invoice]), url: user_invoice_path, method: :patch do |f| %>
+<%= render partial: 'form', locals: {f: f} %>
+
+<label>Select Musician </label>
+<%= f.collection_select :user_id, User.all, :id, :name, include_blank: 'Please Choose the Musician' %><br>
+
+<%= f.submit %>
+<% end %>

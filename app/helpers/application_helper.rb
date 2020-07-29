@@ -6,4 +6,14 @@ module ApplicationHelper
         # end
     end
 
+    # def action_buttons(user)
+    #     case current_user.friendship_status(user)
+    #     # ...
+    #     when "requested"
+    #       link_to("Accept", ...) +
+    #       link_to("Decline", ...)
+    #       # ...
+    #     end
+    #   end
+
 end
