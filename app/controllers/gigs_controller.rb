@@ -12,7 +12,6 @@ class GigsController < ApplicationController
         if @gig.save
             redirect_to gig_path(@gig)
         else
-            flash[:notice] = "Please create a valid gig"
             render :new
         end
     end
@@ -45,8 +44,7 @@ class GigsController < ApplicationController
         if @gig.save
             redirect_to gig_path(@gig)
         else
-            flash[:notice] = "Gig was not updated"
-            redirect_to gigs_path
+            render :edit
         end        
     end
 

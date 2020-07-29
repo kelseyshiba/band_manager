@@ -1,5 +1,6 @@
 <h3>Create a New Invoice</h3><br>
 <%= form_for ([@user, @invoice]) do |f| %>
+<%= render partial: 'sessions/errors', locals: {obj: @user} %>
 <%= render partial: 'form', locals: {f: f, user: @user} %>
 
 <label> Musician: </label>

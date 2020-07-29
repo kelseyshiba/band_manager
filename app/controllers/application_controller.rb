@@ -17,8 +17,10 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized
-        redirect_to root_path if !require_login
-        flash[:notice] = "You must be logged in to view requested page."
+        if !require_login
+            flash[:notice] = "You must be logged in to view requested page."
+            redirect_to root_path 
+        end
     end
 
     def not_found

@@ -1,21 +1,21 @@
 <%= users_header %><br>
 
 <p><%= f.label :name %>
-<%= f.text_field :name, placeholder: @user.errors[:name] || 'Enter Name' %>
+<%= f.text_field :name, placeholder: 'Enter Name' %>
 </p>
 
 <p><%= f.label :instrument %>
-<%= f.text_field :instrument, placeholder: @user.errors[:instrument] || 'Enter Instrument' %>
+<%= f.text_field :instrument, placeholder: 'Enter Instrument' %>
 </p>
 
 <p><%= f.label :username %>
-<%= f.text_field :username, placeholder: @user.errors[:username] || 'Enter Username' %>
+<%= f.text_field :username, placeholder: 'Enter Username' %>
 </p>
 <p><%= f.label :password %>
-<%= f.password_field :password, placeholder: @user.errors[:password] || 'Enter Password' %>
+<%= f.password_field :password, placeholder: 'Enter Password' %>
 </p>
 <p><%= f.label :email %>
-<%= f.email_field :email, placeholder: @user.errors[:email] ||  'Enter Email' %>
+<%= f.email_field :email, placeholder: 'Enter Email' %>
 </p>
 <p><%= f.label :admin %>
 <%= f.check_box :admin %>

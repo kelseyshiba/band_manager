@@ -3,6 +3,8 @@ class Gig < ApplicationRecord
     has_many :gig_users
     has_many :users, through: :gig_users
 
+    validates :title, :client, :street_address, :city, :state, :zip, :start_time, presence: true
+  
     def full_location
         return 'No Address Available' if self.street_address.blank?
         parts = [self.street_address, self.secondary_address, self.city, self.state, self.zip]
@@ -15,7 +17,9 @@ class Gig < ApplicationRecord
     end
 
     def formatted_end_time
-        self.end_time.strftime("%B %d, %Y, %I:%M%P")
+        if !end_time.nil?
+            self.end_time.strftime("%B %d, %Y, %I:%M%P")
+        end
     end
 
     def formatted_date_title
