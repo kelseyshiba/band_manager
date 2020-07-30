@@ -177,22 +177,50 @@ loop do
     end
 end
 
+25.times do 
+    Song.create(
+        title: Faker::Music::GratefulDead.song,
+        artist: Faker::Music.band
+    )
+end
 
+10.times do 
+    i = 1
+    SetList.create(
+        gig_id: i 
+    )
+    i += 1
+end
 
-Title: quiabuia
-Start: July 28, 2020, 09:21pm
-End: July 29, 2020, 12:57am
-Type: rehearsal
-Booking Status:pending
-Production Schedule:How's your dad? 7pm
-Guest List:Dad
-Location:
-82699 Heathcote Drives
-Apt. 527
-East Marlonville
-Virginia
-41867-4051
+5.times do 
+    set_list = SetList.find(10)
+    set_list.songs << Song.find(1)
+end
 
-Musicians:
-Briana Harris,saxophone
-Joel Harris 101,Baritone Saxophone
+5.times do 
+    i = 1
+    set_list = SetList.find(i)
+    set_list.songs << Song.find(i + 1)
+    i += 1
+end
+
+5.times do 
+    i = 1
+    set_list = SetList.find(i)
+    set_list.songs << Song.find(i + 2)
+    i += 1
+end
+
+5.times do 
+    i = 1
+    set_list = SetList.find(i)
+    set_list.songs << Song.find(i + 3)
+    i += 1
+end
+
+5.times do 
+    i = 1
+    set_list = SetList.find(i)
+    set_list.songs << Song.find(i + 4)
+    i += 1
+end

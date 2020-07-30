@@ -12,6 +12,7 @@
 <div>
     <strong>Location:</strong><br> <%= @gig.full_location %>
 </div><br>
+<%= link_to 'Set List(s)', gig_set_lists_path(@gig) %><br><br>
 
 <strong>Musicians:</strong><br>
 
@@ -23,6 +24,7 @@
     <%= link_to 'Edit This Gig', edit_gig_path %><br>
     <%= link_to 'Delete Gig', gig_path, data: {confirm: 'Delete this Gig?'}, method: :delete %><br>
 <% end %>
+
 <%= link_to 'Back to All Gigs', gigs_path %><br>
 <%= link_to 'Main Page', main_path %><br><br>
 <%= button_to 'Logout', logout_path %>

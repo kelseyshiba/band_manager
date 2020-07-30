@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :songs
-  resources :set_lists
+  #resources :set_lists
   resources :invoices
-  resources :gigs
+  resources :gigs do
+    resources :set_lists, only: [:index]
+  end
   resources :gig_users, only: [:update, :destroy]
   
   resources :users do 
