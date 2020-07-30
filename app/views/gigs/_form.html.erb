@@ -49,7 +49,9 @@
 <%= user_fields.label :name %>
 <%= user_fields.text_field :name, placeholder: 'Enter name' %><br>
 <%= user_fields.label :instrument %>
-<%= user_fields.text_field :instrument, placeholder: 'Enter instrument' %><br><br>
+<%= user_fields.text_field :instrument, placeholder: 'Enter instrument' %><br>
+<%= user_fields.label :email %>
+<%= user_fields.text_field :email, placeholder: 'Enter Email' %><br><br>
 <% end %>
     
 <%= f.submit %>

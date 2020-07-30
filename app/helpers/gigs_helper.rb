@@ -15,7 +15,4 @@ module GigsHelper
         end
     end
 
-    # def gig_date_display
-        
-    # end
 end

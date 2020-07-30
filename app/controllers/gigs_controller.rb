@@ -38,7 +38,6 @@ class GigsController < ApplicationController
     end
 
     def update
-        #"gig"=>{"title"=>"sedentary", "event_type"=>"rehearsal", "gig_status"=>"pending", "client"=>"Mrs. Goldie Jacobs", "street_address"=>"255 Jackie Ports", "secondary_address"=>"Apt. 496", "city"=>"Lake Katharynland", "state"=>"Missouri", "zip"=>"08189-8070", "start_time"=>"2020-08-03T21:22:32", "end_time"=>"2020-08-04T00:58:32", "production_schedule"=>"", "guest_list"=>"", "user_ids"=>["", "9"], "user_attributes"=>{"name"=>"", "instrument"=>""}}, "commit"=>"Save Gig", "controller"=>"gigs", "action"=>"update", "id"=>"7"}
         @gig = Gig.find_by_id(params[:id])
         @gig.update(gig_params)
         if @gig.save
@@ -57,7 +56,7 @@ class GigsController < ApplicationController
     private
 
     def gig_params
-        params.require(:gig).permit(:title, :event_type, :gig_status, :client, :street_address, :secondary_address, :city, :state, :zip, :start_time, :end_time, :production_schedule, :guest_list, user_ids:[], user_attributes: [:name, :instrument])
+        params.require(:gig).permit(:title, :event_type, :gig_status, :client, :street_address, :secondary_address, :city, :state, :zip, :start_time, :end_time, :production_schedule, :guest_list, user_ids:[], user_attributes: [:name, :instrument, :email])
     end
 
     def set_gig

@@ -1,7 +1,7 @@
 <h3>Create a New Invoice</h3><br>
-<%= form_for ([@user, @invoice]) do |f| %>
-<%= render partial: 'sessions/errors', locals: {obj: @user} %>
-<%= render partial: 'form', locals: {f: f, user: @user} %>
+<%= form_for :invoice do |f| %>
+<%= render partial: 'sessions/errors', locals: {obj: @invoice} %>
+<%= render partial: 'form', locals: {f: f, user: @invoice} %>
 
 <label> Musician: </label>
 <%= f.hidden_field :user_id, value: current_user.id %>

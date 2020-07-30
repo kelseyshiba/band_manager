@@ -27,12 +27,11 @@ class Gig < ApplicationRecord
     end
 
     def user_attributes=(user_attributes)
-        if user_attributes[:name].present? && user_attributes[:instrument].present?
-            user = User.find_or_create_by(name: user_attributes[:name]) do |u|
+        if user_attributes[:name].present? && user_attributes[:instrument].present? && user_attributes[:email].present?
+            user = User.find_or_create_by(email: user_attributes[:email]) do |u|
                 u.instrument = user_attributes[:instrument]
-                u.email = "kelsey.shiba@gmail.com" ##FIX THIS
-                u.password = SecureRandom.hex(16) #make a sample pass, expires if they haven't signed up
-                #has_secure_password - reset password 
+                u.name = user_attributes[:name]
+                u.password = "theburroughs"
                 u.username = user_attributes[:name].gsub(" ", ".").downcase
                 u.save
                 self.users << u
