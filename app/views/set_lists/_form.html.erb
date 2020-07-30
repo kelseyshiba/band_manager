@@ -1,0 +1,13 @@
+<h3>New Set List for <%= @gig.title %> Gig</h3>
+<%= form_for([gig, setlist]) do |f| %>
+<label>Choose Songs: </label><br>
+<%= f.collection_check_boxes :song_ids, Song.all, :id, :title %><br>
+<label>Or Enter a New Song: </label><br>
+<%= f.fields_for :song_attributes, setlist.songs.build  do |song_fields| %>
+    <%= song_fields.label :title %>
+    <%= song_fields.text_field :title, placeholder: 'Enter title' %><br>
+    <%= song_fields.label :artist %>
+    <%= song_fields.text_field :artist, placeholder: 'Enter artist' %><br>
+    <%end%>
+<%= f.submit %>
+<% end %>
