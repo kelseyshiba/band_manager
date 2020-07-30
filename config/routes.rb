@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #resources :set_lists
   resources :invoices
   resources :gigs do
-    resources :set_lists, only: [:index, :new, :create]
+    resources :set_lists, only: [:index, :new, :create, :edit, :update, :destroy]
   end
   resources :gig_users, only: [:update, :destroy]
   

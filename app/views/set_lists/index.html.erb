@@ -1,8 +1,10 @@
 <h3>Set List for <%= @gig.title %></h3>
+<h4>Date: <%= @gig.formatted_start_time %></h4>
 <% @set_lists.each do |set_list| %>
     <% set_list.songs.each.with_index(1) do |song, i| %>
         <li><%= "#{i}. #{song.title} - #{song.artist}" %></li>
         <% end %><br>
-<% end %>
 
+<%= link_to 'Edit Set List', edit_gig_set_list_path(@gig, set_list) %><br>
+<% end %>
 <%=link_to 'Back to Gig Info', gig_path(@gig)%><br>

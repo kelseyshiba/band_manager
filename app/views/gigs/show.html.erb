@@ -12,7 +12,8 @@
 <div>
     <strong>Location:</strong><br> <%= @gig.full_location %>
 </div><br>
-<%= link_to 'Set List(s)', gig_set_lists_path(@gig) %><br><br>
+<%= link_to 'Set List(s)', gig_set_lists_path(@gig) %><br>
+<%= link_to 'Add a Set List for this Gig', new_gig_set_list_path(@gig) %><br><br>
 
 <strong>Musicians:</strong><br>
 

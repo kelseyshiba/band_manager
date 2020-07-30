@@ -1,4 +1,4 @@
-<h3>New Set List for <%= @gig.title %> Gig</h3>
+
 <%= form_for([gig, setlist]) do |f| %>
 <label>Choose Songs: </label><br>
 <%= f.collection_check_boxes :song_ids, Song.all, :id, :title %><br>
