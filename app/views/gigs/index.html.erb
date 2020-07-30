@@ -19,10 +19,8 @@
 <strong>Event Type:</strong> <%= gig.event_type %><br>
 <strong>Location:</strong> <%= "#{gig.city}, #{gig.state}" %><br>
 <strong>Client:</strong> <%=gig.client %><br>
-<strong>Accept/Decline</strong>
+<strong>Status: </strong><%= gig_user_status(gig_user_id(gig, current_user))%>
 <%= hidden_field :gig, value: gig.id %>
- <%= button_to 'Accept', gig_user_path(gig_user_id(gig, current_user)), method: :patch %> 
- <%= button_to 'Decline', gig_user_path(gig_user_id(gig, current_user)), method: :delete %>
 <%= link_to 'See More Details', gig_path(gig) %><br><br>
 </div>
 <% end %>

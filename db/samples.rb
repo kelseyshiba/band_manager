@@ -176,3 +176,23 @@ loop do
         break
     end
 end
+
+
+
+Title: quiabuia
+Start: July 28, 2020, 09:21pm
+End: July 29, 2020, 12:57am
+Type: rehearsal
+Booking Status:pending
+Production Schedule:How's your dad? 7pm
+Guest List:Dad
+Location:
+82699 Heathcote Drives
+Apt. 527
+East Marlonville
+Virginia
+41867-4051
+
+Musicians:
+Briana Harris,saxophone
+Joel Harris 101,Baritone Saxophone
