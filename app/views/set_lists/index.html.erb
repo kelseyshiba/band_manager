@@ -3,8 +3,10 @@
 <% @set_lists.each do |set_list| %>
     <% set_list.songs.each.with_index(1) do |song, i| %>
         <li><%= "#{i}. #{song.title} - #{song.artist}" %></li>
-        <% end %><br>
+        <% end %>
 
 <%= link_to 'Edit Set List', edit_gig_set_list_path(@gig, set_list) %><br>
-<% end %>
+<%= link_to 'Delete Set List', gig_set_list_path(@gig, set_list), data: {confirm: 'Delete this Set List?'}, method: :delete %><br><br>
+<% end %><br>
 <%=link_to 'Back to Gig Info', gig_path(@gig)%><br>
+<%= link_to 'Create a New Set List', new_gig_set_list_path(@gig) %>
