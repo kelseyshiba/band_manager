@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :songs
   resources :set_lists
-  resources :invoices, only: [:index, :new, :show, :edit, :update, :destroy]
+  resources :invoices
   resources :gigs
+  resources :gig_users, only: [:update, :destroy]
   
   resources :users do 
     resources :gigs, only: [:index, :show]
@@ -29,6 +30,8 @@ Rails.application.routes.draw do
 
   #Other Routes
   get '*path', to: 'application#not_found'
-  #redirect { |route, req| req.flash[:error] = “The URL \“/#{route[:path]}\” Was Not Found!“; ‘/’ }
+
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

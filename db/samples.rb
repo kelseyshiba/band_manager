@@ -166,3 +166,13 @@ loop do
         break
     end
 end
+i = 1
+loop do 
+    gig_user = GigUser.find(i)
+    gig_user.status = "Pending"
+    gig_user.save
+    i += 1
+    if i == 8
+        break
+    end
+end

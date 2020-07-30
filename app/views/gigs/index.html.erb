@@ -1,8 +1,7 @@
 <%= gig_list_header(current_user)%><br>
 <%= gig_link_header(current_user) %><br><br>
 <%= flash[:notice] %><br>
-
-<%= link_to 'Main Page', main_path %><br>
+<%= link_to 'Main Page', main_path %><br><br>
 <%= month_calendar events: @gigs do |date, gigs| %>
   <%= date.day %>
 
@@ -19,9 +18,11 @@
 <strong>Date:</strong> <%= gig.formatted_start_time %><br>
 <strong>Event Type:</strong> <%= gig.event_type %><br>
 <strong>Location:</strong> <%= "#{gig.city}, #{gig.state}" %><br>
-<strong>Client:</strong> <%=gig.client %>
-<strong>Status:</strong> <%= gig.gig_status %><br>
-
+<strong>Client:</strong> <%=gig.client %><br>
+<strong>Accept/Decline</strong>
+<%= hidden_field :gig, value: gig.id %>
+ <%= button_to 'Accept', gig_user_path(gig_user_id(gig, current_user)), method: :patch %> 
+ <%= button_to 'Decline', gig_user_path(gig_user_id(gig, current_user)), method: :delete %>
 <%= link_to 'See More Details', gig_path(gig) %><br><br>
 </div>
 <% end %>
