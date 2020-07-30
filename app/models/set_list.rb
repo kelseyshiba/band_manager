@@ -1,6 +1,7 @@
 class SetList < ApplicationRecord
     belongs_to :gig
-    has_many :songs
+    has_many :setlist_songs
+    has_many :songs, through: :setlist_songs
 
     #validates :songs, :length => { :minimum => 1 }
 

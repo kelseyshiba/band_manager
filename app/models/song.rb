@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-    belongs_to :set_list
-
+    has_many :setlist_songs
+    has_many :set_lists, through: :setlist_songs
     #validates :title, :artist, presence: true
 end

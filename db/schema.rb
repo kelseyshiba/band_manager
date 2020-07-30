@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_222754) do
+ActiveRecord::Schema.define(version: 2020_07_30_220240) do
 
   create_table "calendars", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -66,13 +66,20 @@ ActiveRecord::Schema.define(version: 2020_07_28_222754) do
     t.index ["gig_id"], name: "index_set_lists_on_gig_id"
   end
 
+  create_table "setlist_songs", force: :cascade do |t|
+    t.integer "set_list_id"
+    t.integer "song_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["set_list_id"], name: "index_setlist_songs_on_set_list_id"
+    t.index ["song_id"], name: "index_setlist_songs_on_song_id"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.string "artist"
-    t.integer "set_list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["set_list_id"], name: "index_songs_on_set_list_id"
   end
 
   create_table "users", force: :cascade do |t|
