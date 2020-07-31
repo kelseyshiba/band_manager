@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_021425) do
+ActiveRecord::Schema.define(version: 2020_07_31_034005) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,11 +33,6 @@ ActiveRecord::Schema.define(version: 2020_07_31_021425) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "calendars", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "gig_users", force: :cascade do |t|
     t.integer "gig_id"
     t.integer "user_id"
@@ -53,8 +48,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_021425) do
     t.text "production_schedule"
     t.text "guest_list"
     t.string "event_type"
-    t.string "gig_status"
-    t.integer "calendar_id"
+    t.string "booking_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "street_address"
@@ -66,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_07_31_021425) do
     t.datetime "end_time"
     t.string "client"
     t.string "title"
-    t.index ["calendar_id"], name: "index_gigs_on_calendar_id"
   end
 
   create_table "invoices", force: :cascade do |t|
