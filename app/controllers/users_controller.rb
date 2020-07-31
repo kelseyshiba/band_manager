@@ -49,16 +49,7 @@ class UsersController < ApplicationController
         flash[:notice] = "User deleted."
         redirect_to users_path
     end
-    
-    def message
-        @receiver = User.find_by_id(params[:id])
-        @sender = current_user
-        @message = params[:content]
-        email = UserMailer.new_user_email(@receiver, @sender, @message)
-        email.deliver_now 
-        #email.deliver_later
-        redirect_to user_path(current_user)
-    end
+
 
     private
 

@@ -28,4 +28,8 @@ class User < ApplicationRecord
           @users = User.all
         end
     end
+
+    def new_user_email
+      
+    end
 end

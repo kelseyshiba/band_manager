@@ -8,9 +8,20 @@ class GigsController < ApplicationController
     end
 
     def create
+        # <ActionController::Parameters {"authenticity_token"=>"mztrPxDobjZycJZdTsth85+NTrOQr/JnWES3x/XFjzHrziP74A9/DZ8Lpu8D1tL1Q7NfszpEGfpHAA5FEE3qCw==", "gig"=>{"title"=>"Groundhog Day", "event_type"=>"Repeated", "booking_status"=>"Pending", "client"=>"Groundhog", "street_address"=>"00 Underground", "secondary_address"=>"", "city"=>"Greeley", "state"=>"CO", "zip"=>"80033", "start_time"=>"2020-07-31T16:00", "end_time"=>"2020-07-31T21:00", "production_schedule"=>"Repeated Stuff", "guest_list"=>"Elephant", "user_ids"=>["", "10", "17"], "user_attributes"=>{"name"=>"Kelsey Shiba", "instrument"=>"Melodica", "email"=>"developerkelseyshiba@gmail.com", "new_user_email"=>"1"}}, "commit"=>"Create Gig", "controller"=>"gigs", "action"=>"create"} permitted: false>
+    
         @gig = Gig.new(gig_params)
         if @gig.save
-            redirect_to gig_path(@gig)
+            if params[:gig][:user_attributes][:new_user_email] == "1"
+                @receiver = User.find_or_create_by(email: params[:gig][:user_attributes][:email])
+                @sender = current_user
+                UserMailer.new_user_email(@receiver, @sender).deliver_now
+                #email.deliver_later
+                flash[:notice] = 'Email sent to new user.'
+                redirect_to gig_path
+            else
+                redirect_to gig_path(@gig)
+            end
         else
             render :new
         end

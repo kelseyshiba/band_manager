@@ -1,4 +1,5 @@
 <h2>Gig Information for <%= @gig.formatted_date_title %></h2><br>
+<%= flash[:notice] %><br>
 <%= link_to 'All Gigs', gigs_path %><br>
 <%= link_to 'My Gigs', user_gigs_path(current_user) %><br><br>
 

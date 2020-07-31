@@ -1,8 +1,7 @@
 class UserMailer < ApplicationMailer
-    def new_user_email(receiver, sender, message)
+    def new_user_email(receiver, sender)
         @sender = sender
         @receiver = receiver
-        @message = message
 
         mail(to: 'kelsey.shiba@gmail.com',
             subject: 'Please Sign Up',
