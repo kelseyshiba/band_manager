@@ -17,7 +17,6 @@ class GigsController < ApplicationController
     end
 
     def index
-        #@gigs = Gig.search(params[:query])
         if params[:user_id]
             if !User.find_by_id(params[:user_id]).nil?
                 @gigs = User.find_by_id(params[:user_id]).gigs.order_by_date
@@ -59,7 +58,7 @@ class GigsController < ApplicationController
     private
 
     def gig_params
-        params.require(:gig).permit(:title, :event_type, :gig_status, :client, :street_address, :secondary_address, :city, :state, :zip, :start_time, :end_time, :production_schedule, :guest_list, user_ids:[], user_attributes: [:name, :instrument, :email])
+        params.require(:gig).permit(:title, :event_type, :booking_status, :client, :street_address, :secondary_address, :city, :state, :zip, :start_time, :end_time, :production_schedule, :guest_list, user_ids:[], user_attributes: [:name, :instrument, :email])
     end
 
     def set_gig

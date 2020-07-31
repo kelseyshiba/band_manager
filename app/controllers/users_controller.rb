@@ -4,7 +4,11 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:edit, :show]
     
     def index
-        @users = User.all
+        if params[:query]
+           @users = User.search(params[:query]) 
+        else
+            @users = User.all
+        end
     end
 
     def new 
@@ -14,8 +18,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            session[:user_id] = @user.id
-            redirect_to main_path
+            redirect_to login_path
         else
             render :new
         end
