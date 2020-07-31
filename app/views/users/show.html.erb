@@ -1,4 +1,5 @@
 <h3>Profile for <%= @user.name.split.map(&:capitalize).join(" ") %> </h3><br>
+<%= profile_photo(current_user) %>
 <strong>Instrument: </strong><%= @user.instrument %><br>
 <strong>Username: </strong><%= @user.username %><br>
 <strong>Password: </strong><%= @user.password %><br>

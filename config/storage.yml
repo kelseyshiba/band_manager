@@ -14,6 +14,8 @@ local:
 #   region: us-east-1
 #   bucket: your_own_bucket
 
+#Rails.application.config.active_storage.service
+
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
