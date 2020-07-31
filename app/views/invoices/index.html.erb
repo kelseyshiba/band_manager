@@ -1,13 +1,26 @@
     <h2> <%= invoice_header(current_user) %> </h2>
     <p><%= invoice_link_header(current_user)%> </p>
 
-    <% @invoices.each do |invoice| %>
-    <strong>Date: </strong><%= invoice.formatted_date %><br>
-    <strong>Amount: $</strong><%= invoice.amount %><br>
-    <strong>Description: </strong><%= invoice.description %><br>
-    <strong>User: </strong><%= invoice.user_id %><br>
-    <strong>Gig: </strong><%= invoice.gig_id %><br>
-    <strong></strong><%= link_to 'More Details', invoice_path(invoice) %><br><br>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Date</th>
+    <th>Amount</th>
+    <th>Description</th>
+    <th>Musician ID</th>
+    <th>Gig ID</th>
+    <th>Info</th>
+  </tr>
+<% @invoices.each do |invoice| %>
+<tr>
+    <td><%= invoice.formatted_date %></td>
+    <td>$<%= invoice.amount %></td>
+    <td><%= invoice.description %></td>
+    <td><%= invoice.user_id %></td>
+    <td><%= invoice.gig_id %></td>
+    <td><%= link_to 'More Details', invoice_path(invoice) %></td>
+   
+</tr>
     <% end %>
+</table>
 
-    <%= button_to 'Logout', logout_path %>
+<%= button_to 'Logout', logout_path %>

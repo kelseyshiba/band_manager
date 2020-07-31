@@ -2,9 +2,9 @@
 
     <div class="container">
         <div class="form-group">
-    <%= form_for :invoice do |f| %>
+    <%= form_for @invoice do |f| %>
     <%= render partial: 'sessions/errors', locals: {obj: @invoice} %>
-    <%= render partial: 'form', locals: {f: f, user: @invoice} %>
+    <%= render partial: 'form', locals: {f: f, invoice: @invoice} %>
 
     <label> Musician: </label>
     <%= f.hidden_field :user_id, value: current_user.id %>

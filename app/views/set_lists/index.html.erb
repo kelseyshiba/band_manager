@@ -1,13 +1,24 @@
-<h3>Set List for <%= @gig.title %></h3>
+<h3>Set Lists for <%= @gig.title %></h3>
 <h4>Date: <%= @gig.formatted_start_time %></h4>
-<% @set_lists.each do |set_list| %>
-    <%= set_list.title %>
-    <% set_list.songs.each.with_index(1) do |song, i| %>
-        <li><%= "#{i}. #{song.title} - #{song.artist}" %></li>
-        <% end %>
 
+<table class="table table-striped table-hover">
+<% @set_lists.each do |set_list| %>
+    <th><%= set_list.title %> Set List </th>
+    <tr>
+        <th>Song</th>
+        <th>Artist</th>
+    </tr>
+    <tr>
+    <% set_list.songs.each.with_index(1) do |song, i| %>
+        <td><%= "#{i}. #{song.title}" %></td>
+        <td><%= song.artist %></td>
+        <td></td>
+    </tr>
+        <% end %>
+</table>
 <%= link_to 'Edit Set List', edit_gig_set_list_path(@gig, set_list) %><br>
 <%= link_to 'Delete Set List', gig_set_list_path(@gig, set_list), data: {confirm: 'Delete this Set List?'}, method: :delete %><br><br>
 <% end %><br>
+
 <%=link_to 'Back to Gig Info', gig_path(@gig)%><br>
 <%= link_to 'Create a New Set List', new_gig_set_list_path(@gig) %>

@@ -18,7 +18,7 @@ class GigsController < ApplicationController
                 UserMailer.new_user_email(@receiver, @sender).deliver_now
                 #email.deliver_later
                 flash[:notice] = 'Email sent to new user.'
-                redirect_to gig_path
+                redirect_to gig_path(@gig)
             else
                 redirect_to gig_path(@gig)
             end
