@@ -1,7 +1,15 @@
-<%= gig_list_header(current_user)%><br>
+<%= gig_list_header(current_user) %><br>
 <%= gig_link_header(current_user) %><br><br>
 <%= flash[:notice] %><br>
+
+<%= form_tag gigs_path, method: :get do %>
+<%= label_tag(:query, "Find a Gig:") %>
+<%= text_field_tag :query, params[:query] %>
+<%= submit_tag("Search", :title =>nil) %>
+<% end %>
+
 <%= link_to 'Main Page', main_path %><br><br>
+
 <%= month_calendar events: @gigs do |date, gigs| %>
   <%= date.day %>
 

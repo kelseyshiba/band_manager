@@ -17,6 +17,7 @@ class GigsController < ApplicationController
     end
 
     def index
+        #@gigs = Gig.search(params[:query])
         if params[:user_id]
             if !User.find_by_id(params[:user_id]).nil?
                 @gigs = User.find_by_id(params[:user_id]).gigs.order_by_date
@@ -24,6 +25,8 @@ class GigsController < ApplicationController
                 flash[:notice] = "No gigs listed for this musician."
                 redirect_to gigs_path
             end
+        elsif params[:query]
+            @gigs = Gig.search(params[:query])
         else
             @gigs = Gig.all.order_by_date
         end

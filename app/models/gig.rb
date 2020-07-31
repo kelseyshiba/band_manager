@@ -44,4 +44,12 @@ class Gig < ApplicationRecord
         #make sure you can write as scope
     end
 
+    def self.search(search)
+        if search
+          @gigs = Gig.where("title LIKE ?", "%#{search}%")
+        else
+          @gigs = Gig.all
+        end
+    end
+
 end

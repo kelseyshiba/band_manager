@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find_by_id(params[:id])
+        # @user.profile_photo.attach(params[:profile_photo])
         @user.update(user_params)
         if @user.save
             redirect_to user_path(@user)
