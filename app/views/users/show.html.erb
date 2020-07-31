@@ -1,5 +1,4 @@
-<h1>Admins only</h1>
-<h3>Information for <%= @user.name %> </h3><br>
+<h3>Profile for <%= @user.name.split.map(&:capitalize).join(" ") %> </h3><br>
 <strong>Instrument: </strong><%= @user.instrument %><br>
 <strong>Username: </strong><%= @user.username %><br>
 <strong>Password: </strong><%= @user.password %><br>

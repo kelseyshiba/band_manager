@@ -285,4 +285,36 @@ SetList.find(12).title= Faker::Lorem.word
 SetList.find(13).title= Faker::Lorem.word
 SetList.find(14).title= Faker::Lorem.word
 
-
+giguser1 = GigUser.find(1)
+giguser1.pay = Faker::Number.number.to_f
+giguser1.save
+giguser2 = GigUser.find(2)
+giguser2.pay = Faker::Number.number.to_f
+giguser3.save
+giguser3 = GigUser.find(3)
+giguser3.pay = Faker::Number.number.to_f
+giguser4.save
+giguser4 = GigUser.find(4)
+giguser4.pay = Faker::Number.number.to_f
+giguser4.save
+giguser5 = GigUser.find(5)
+giguser5.pay = Faker::Number.number.to_f
+giguser5.save
+giguser6 = GigUser.find(6)
+giguser6.pay = Faker::Number.number.to_f
+giguser6.save
+giguser7 = GigUser.find(7)
+giguser7.pay = Faker::Number.number.to_f
+giguser7.save
+giguser8 = GigUser.find(8)
+giguser8.pay = Faker::Number.number.to_f
+giguser8.save
+giguser9 = GigUser.find(9)
+giguser9.pay = Faker::Number.number.to_f
+giguser9.save
+giguser10= GigUser.find(10)
+giguser10.pay = Faker::Number.number.to_f
+giguser10.save
+giguser11 = GigUser.find(11)
+giguser11.pay = Faker::Number.number.to_f
+giguser11.save
