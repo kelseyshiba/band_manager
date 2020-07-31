@@ -1,9 +1,6 @@
 <h3>Profile for <%= @user.name.split.map(&:capitalize).join(" ") %> </h3><br>
-<%= profile_photo(@user) %>
-<% if @user.profile_photo.attached? %>
-<%= image_tag(@user.profile_photo) %>
-<% end %>
-  <%= debug @user.profile_photo %>
+<%= profile_photo(@user) %><br>
+
 <strong>Instrument: </strong><%= @user.instrument %><br>
 <strong>Username: </strong><%= @user.username %><br>
 <strong>Email: </strong><%= @user.email %><br>

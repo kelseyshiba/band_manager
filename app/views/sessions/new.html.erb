@@ -1,19 +1,22 @@
 <h1>Login</h1><br>
 <%= flash[:notice] %><br>
+<div class="container">
+    <div class='form-group'>
 <%= form_with(url: "/login", method: "post") do %>
 <p>
 <%= label_tag :username%>
-<%= text_field_tag :username, nil, placeholder: 'Enter Username'%>
+<%= text_field_tag :username, nil, class: 'form-control', placeholder: 'Enter Username'%>
 </p>
 
 <p>
 <%= label_tag :password %>
-<%= password_field_tag :password, nil, placeholder: 'Enter Password' %>
+<%= password_field_tag :password, nil, class: 'form-control', placeholder: 'Enter Password' %>
 </p>
 
 <%= submit_tag "Login"%>
 <% end %><br>
-
+    </div>
+</div>
 <%= button_to "Log in with Google", '/auth/google_oauth2'  %><br>
 <%= button_to "Log in with Facebook", '/auth/facebook' %><br>
 

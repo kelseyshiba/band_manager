@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   post '/auth/facebook', to: 'sessions#omniauth'
 
   #Other Routes
-  get '*path', to: 'application#not_found'
+  #get '*path', to: 'application#not_found'
 
 
 
