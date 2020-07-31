@@ -54,7 +54,14 @@
 <%= user_fields.text_field :email, class: 'form-control', placeholder: 'Enter Email' %><br><br>
 <% end %>
     
-<%= f.submit %>
+<%= f.submit %><br><br>
+
+<%= form_tag(url: "users/#{current_user.id}/message") do %>
+<label>Send Email to New User</label><br>
+<%= text_area_tag :content, nil, placeholder: 'Customize Message', class: 'form-control' %><br>
+<%= submit_tag "Send" %>
+<% end %>
+
 
 
 

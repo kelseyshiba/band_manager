@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   #Other Routes
   #get '*path', to: 'application#not_found'
 
+  #Action Mailer
+  post 'users/:id/message', to: 'users#message'
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
