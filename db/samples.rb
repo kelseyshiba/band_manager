@@ -270,6 +270,19 @@ SetlistSong.create(set_list_id: 11, song_id: 12)
 SetlistSong.create(set_list_id: 11, song_id: 1)
 
 
-
+SetList.find(1).title= Faker::Lorem.word
+SetList.find(2).title= Faker::Lorem.word
+SetList.find(3).title= Faker::Lorem.word
+SetList.find(4).title= Faker::Lorem.word
+SetList.find(5).title= Faker::Lorem.word
+SetList.find(6).title= Faker::Lorem.word
+SetList.find(7).title= Faker::Lorem.word
+SetList.find(8).title= Faker::Lorem.word
+SetList.find(9).title= Faker::Lorem.word
+SetList.find(10).title= Faker::Lorem.word
+SetList.find(11).title= Faker::Lorem.word
+SetList.find(12).title= Faker::Lorem.word
+SetList.find(13).title= Faker::Lorem.word
+SetList.find(14).title= Faker::Lorem.word
 
 

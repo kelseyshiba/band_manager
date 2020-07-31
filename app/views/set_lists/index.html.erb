@@ -1,6 +1,7 @@
 <h3>Set List for <%= @gig.title %></h3>
 <h4>Date: <%= @gig.formatted_start_time %></h4>
 <% @set_lists.each do |set_list| %>
+    <%= set_list.title %>
     <% set_list.songs.each.with_index(1) do |song, i| %>
         <li><%= "#{i}. #{song.title} - #{song.artist}" %></li>
         <% end %>

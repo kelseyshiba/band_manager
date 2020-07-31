@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_220240) do
+ActiveRecord::Schema.define(version: 2020_07_31_014840) do
 
   create_table "calendars", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 2020_07_30_220240) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "status"
+    t.string "status", default: "Pending"
+    t.float "pay"
     t.index ["gig_id"], name: "index_gig_users_on_gig_id"
     t.index ["user_id"], name: "index_gig_users_on_user_id"
   end
@@ -63,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_07_30_220240) do
     t.integer "gig_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
     t.index ["gig_id"], name: "index_set_lists_on_gig_id"
   end
 

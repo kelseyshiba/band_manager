@@ -12,8 +12,15 @@ class SetListsController < ApplicationController
     end
 
     def create
-        # <ActionController::Parameters {"authenticity_token"=>"CRwhtej0gBT/1etDIDxa3HVDDyK+vGdnnF9qR7toTwa1MB4AOQ94V+cKh7nN08fNeeRTKdUZCqc2tt6qaB63zg==", "set_list"=>{"gig_id"=>"16", "song_ids"=>["", "2", "9"], "song_attributes"=>{"title"=>"", "artist"=>""}}, "commit"=>"Create Set list", "controller"=>"set_lists", "action"=>"create", "gig_id"=>"16"} permitted: false>
+        #CHECK MARKS
+        # <ActionController::Parameters {"authenticity_token"=>"k/TJErpkmkhZDlDPJih/4TVQpyukTDklclCpSjcRgSov2Pana59iC0HRPDXLx+LwOff7IM/pVOXYuR2n5Gd54g==", "set_list"=>{"gig_id"=>"16", "song_ids"=>["", "1"], "song_attributes"=>{"title"=>"", "artist"=>""}}, "commit"=>"Create Set list", "controller"=>"set_lists", "action"=>"create", "gig_id"=>"16"} permitted: false>
+        ##EMPTY
+        # <ActionController::Parameters {"authenticity_token"=>"KQSaA0BEsdTpVLfRyhXTibD/TRBW+wbr9J+GJXFGjQFdjs9TuYM6iAbSsIDx/Vm8Nelqwd8E8ZqzsiG2ZIUPEQ==", "set_list"=>{"gig_id"=>"16", "song_ids"=>[""], "song_attributes"=>{"title"=>"", "artist"=>""}}, "commit"=>"Create Set list", "controller"=>"set_lists", "action"=>"create", "gig_id"=>"16"} permitted: false>
+
+        #CREATE NEW SONG
+        # <ActionController::Parameters {"authenticity_token"=>"KQSaA0BEsdTpVLfRyhXTibD/TRBW+wbr9J+GJXFGjQFdjs9TuYM6iAbSsIDx/Vm8Nelqwd8E8ZqzsiG2ZIUPEQ==", "set_list"=>{"gig_id"=>"16", "song_ids"=>[""], "song_attributes"=>{"title"=>"New Song", "artist"=>"New Artist"}}, "commit"=>"Create Set list", "controller"=>"set_lists", "action"=>"create", "gig_id"=>"16"} permitted: false>
         @setlist = SetList.new(setlist_params)
+
         if @setlist.save #validations fire #here is where it stops
             redirect_to gig_set_lists_path(params[:gig_id])
         else
@@ -46,7 +53,7 @@ class SetListsController < ApplicationController
     private
 
     def setlist_params
-        params.require(:set_list).permit(:gig_id, song_ids:[], song_attributes: [:title, :artist])
+        params.require(:set_list).permit(:title, :gig_id, song_ids:[], song_attributes: [:title, :artist])
     end
 
     def set_gig
