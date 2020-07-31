@@ -2,43 +2,43 @@
 
 
 <%= f.label :title %>
-<%= f.text_field :title, placeholder: 'Enter gig title' %><br>
+<%= f.text_field :title, class: 'form-control', placeholder: 'Enter gig title' %><br>
 
 <%= f.label :event_type %>
-<%= f.text_field :event_type, placeholder: 'Enter Type e.g. wedding' %><br>
+<%= f.text_field :event_type, class: 'form-control', placeholder: 'Enter Type e.g. wedding' %><br>
 
 <%= f.label :booking_status %>
-<%= f.text_field :booking_status, placeholder: 'Enter Status e.g pending'%><br>
+<%= f.select :booking_status, options_for_select([['Pending'], ['Complete'], ['Deleted']]) %><br>
 
 <%= f.label :client %>
-<%= f.text_field :client, placeholder: 'Enter client name' %><br>
+<%= f.text_field :client, class: 'form-control', placeholder: 'Enter client name' %><br>
 
 <%= f.label :street_address %>
-<%= f.text_field :street_address, placeholder: 'Enter address' %><br>
+<%= f.text_field :street_address, class: 'form-control', placeholder: 'Enter address' %><br>
 
 <%= f.label :secondary_address %>
-<%= f.text_field :secondary_address, placeholder: 'Enter secondary address e.g. suite' %><br>
+<%= f.text_field :secondary_address, class: 'form-control', placeholder: 'Enter secondary address e.g. suite' %><br>
 
 <%= f.label :city %>
-<%= f.text_field :city, placeholder: 'Enter city' %><br>
+<%= f.text_field :city, class: 'form-control', placeholder: 'Enter city' %><br>
 
 <%= f.label :state %>
-<%= f.text_field :state, placeholder: 'Enter state e.g. CO' %><br>
+<%= f.text_field :state, class: 'form-control', placeholder: 'Enter state e.g. CO' %><br>
 
 <%= f.label :zip %>
-<%= f.text_field :zip, placeholder: 'Enter zip' %><br>
+<%= f.text_field :zip, class: 'form-control', placeholder: 'Enter zip' %><br>
 
 <%= f.label :start_time %>
-<%= f.datetime_local_field :start_time %><br>
+<%= f.datetime_local_field :start_time, class: 'form-control' %><br>
 
 <%= f.label :end_time %>
-<%= f.datetime_local_field :end_time %><br>
+<%= f.datetime_local_field :end_time, class: 'form-control' %><br>
 
 <%= f.label :production_schedule %>
-<%= f.text_area :production_schedule, placeholder: 'production schedule' %><br>
+<%= f.text_area :production_schedule, class: 'form-control', placeholder: 'production schedule' %><br>
 
 <%= f.label :guest_list %>
-<%= f.text_area :guest_list, placeholder: 'Enter guest list requests' %><br><br>
+<%= f.text_area :guest_list, class: 'form-control', placeholder: 'Enter guest list requests' %><br><br>
 
 <p>Assign Musicians</p>
 <div>
@@ -47,11 +47,11 @@
 <p>Or Add a New Musician</p>
 <%= f.fields_for :user_attributes, @gig.users.build do |user_fields| %>
 <%= user_fields.label :name %>
-<%= user_fields.text_field :name, placeholder: 'Enter name' %><br>
+<%= user_fields.text_field :name, class: 'form-control', placeholder: 'Enter name' %><br>
 <%= user_fields.label :instrument %>
-<%= user_fields.text_field :instrument, placeholder: 'Enter instrument' %><br>
+<%= user_fields.text_field :instrument, class: 'form-control', placeholder: 'Enter instrument' %><br>
 <%= user_fields.label :email %>
-<%= user_fields.text_field :email, placeholder: 'Enter Email' %><br><br>
+<%= user_fields.text_field :email, class: 'form-control', placeholder: 'Enter Email' %><br><br>
 <% end %>
     
 <%= f.submit %>

@@ -8,8 +8,8 @@ module GigUsersHelper
         if gig_user 
             if gig_user.status.downcase == "pending"
                 tag.p("Status is #{gig_user.status} please accept or decline") +
-                button_to('Accept', gig_user_path(gig_user), data: {confirm: 'Accept this Gig?'}, method: :patch) + tag(:br) +
-                button_to('Decline', gig_user_path(gig_user), data: {confirm: 'Decline this Gig?'}, method: :delete)
+                button_to('Accept', gig_user_path(gig_user), class: "btn btn-success", data: {confirm: 'Accept this Gig?'}, method: :patch) + tag(:br) +
+                button_to('Decline', gig_user_path(gig_user), class: "btn btn-danger", data: {confirm: 'Decline this Gig?'}, method: :delete)
             elsif gig_user.status.downcase == "accepted"
                 tag.p("Gig Accepted!")
             elsif gig_user.status.downcase == "declined"

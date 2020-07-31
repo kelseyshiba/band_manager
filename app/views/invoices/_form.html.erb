@@ -1,12 +1,12 @@
 
 <%= f.label :date %>
-<%= f.datetime_local_field :date %><br>
+<%= f.datetime_local_field :date, class: 'form-control' %><br>
 
 <%= f.label :amount %>
-<%= f.number_field :amount, step: 'any' %><br>
+<%= f.number_field :amount, step: 'any', class: 'form-control' %><br>
 
 <%= f.label :description %>
-<%= f.text_area :description, placeholder: 'Enter description' %><br>
+<%= f.text_area :description, placeholder: 'Enter description', class: 'form-control' %><br>
 
 <label>Select Gig Title</label>
 <%= f.collection_select :gig_id, Gig.all, :id, :title, include_blank: 'Please Choose the Title' %><br>

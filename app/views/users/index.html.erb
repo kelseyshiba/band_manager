@@ -1,5 +1,15 @@
-<h1>Admins Only - view All Users</h1>
+<h3 class="bg-info">Musicians List </h3>
 <%= flash[:notice] %><br>
+<%= link_to 'Create New User', new_user_path %><br><br>
+
+<%= form_tag users_path, method: :get do %>
+<%= label_tag(:query, "Find a Musician:") %>
+<%= text_field_tag :query, params[:query], placeholder: 'Search By Name' %>
+<%= submit_tag("Search", :name =>nil) %>
+<% end %>
+
+<%= link_to 'All Users', users_path %><br><br>
+
 <% @users.each do |user| %>
 <div>
 <strong>Name:</strong><%= user.name %><br>
@@ -7,6 +17,11 @@
 <strong>Username:</strong><%= user.username %><br>
 <strong>Email: </strong><%= user.email %><br>
 <strong>Admin: </strong><%= user.admin %><br>
-<%= link_to 'Edit User', edit_user_path(user) %><br><br>
+<%= link_to 'Edit User', edit_user_path(user) %><br>
+<%= link_to 'Delete User', user_path(user), data: {confirm: 'Delete this User?'}, method: :delete %><br><br>
 </div>
-<% end %>
+<% end %><br>
+
+<%= link_to 'Main', main_path %><br>
+<%= link_to 'All Gigs', gigs_path %>
+

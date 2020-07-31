@@ -1,16 +1,22 @@
-
+<div class="container">
+    <div class='form-group'>
 <%= form_for([@gig, @setlist]) do |f| %>
 <%= f.label :title %>
-<%= f.text_field :title, placeholder: 'Enter Set List Title' %><br>
+<%= f.text_field :title, class: 'form-control', placeholder: 'Enter Set List Title' %><br>
+
 <label>Choose Songs: </label><br>
 <%= f.hidden_field :gig_id, value: @gig.id %>
 <%= f.collection_check_boxes :song_ids, Song.all, :id, :title %><br>
+
 <label>Or Enter a New Song: </label><br>
 <%= f.fields_for :song_attributes do |song_fields| %>
     <%= song_fields.label :title %>
-    <%= song_fields.text_field :title, placeholder: 'Enter title' %><br>
+    <%= song_fields.text_field :title, class: 'form-control', placeholder: 'Enter title' %><br>
+
     <%= song_fields.label :artist %>
-    <%= song_fields.text_field :artist, placeholder: 'Enter artist' %><br>
+    <%= song_fields.text_field :artist, class: 'form-control', placeholder: 'Enter artist' %><br>
     <%end%>
 <%= f.submit %>
 <% end %>
+    </div>
+</div>

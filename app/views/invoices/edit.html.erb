@@ -1,4 +1,6 @@
 <h3>Edit Invoice</h3><br>
+<div class="container">
+        <div class="form-group">
 <%= form_for (@invoice), url: invoice_path, method: :patch do |f| %>
 <%- render partial: 'sessions/errors', locals: {obj: @invoice} %>
 <%= render partial: 'form', locals: {f: f} %>
@@ -8,3 +10,6 @@
 
 <%= f.submit %>
 <% end %>
+
+    </div>
+</div>

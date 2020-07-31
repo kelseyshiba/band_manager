@@ -1,5 +1,9 @@
+<div class="container">
+    <div class='form-group'>
 <%= form_for :user, url: user_path, method: :patch do |f| %>
 <%= render partial: 'sessions/errors', locals: {obj: @user} %>
 <%= render partial: 'form', locals: {f: f, user: @user}%>
 <% end %><br>
+    </div>
+</div>
 <%= button_to 'Logout', logout_path %>

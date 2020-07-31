@@ -1,15 +1,17 @@
 <h3>Profile for <%= @user.name.split.map(&:capitalize).join(" ") %> </h3><br>
-<%= profile_photo(current_user) %>
+<%= profile_photo(@user) %>
+<% if @user.profile_photo.attached? %>
+<%= image_tag(@user.profile_photo) %>
+<% end %>
   <%= debug @user.profile_photo %>
 <strong>Instrument: </strong><%= @user.instrument %><br>
 <strong>Username: </strong><%= @user.username %><br>
-<strong>Password: </strong><%= @user.password %><br>
 <strong>Email: </strong><%= @user.email %><br>
 <strong>Admin: </strong><%= @user.admin %><br>
 
 <%= link_to 'Edit User', edit_user_path %><br>
 
-<%= show_admin_links(current_user) %><br>
+<%= show_admin_links_show(current_user) %><br>
 <%= link_to 'My Gigs', user_gigs_path(@user) %><br>
 <%= link_to 'All Gigs', gigs_path %><br>
 

@@ -1,27 +1,27 @@
 <%= users_header %><br>
 
 <p><%= f.label :name %>
-<%= f.text_field :name, placeholder: 'Enter Name' %>
+<%= f.text_field :name, class: 'form-control', placeholder: 'Enter Name' %>
 </p>
 
 <p><%= f.label :instrument %>
-<%= f.text_field :instrument, placeholder: 'Enter Instrument' %>
+<%= f.text_field :instrument, class: 'form-control', placeholder: 'Enter Instrument' %>
 </p>
 
 <p><%= f.label :username %>
-<%= f.text_field :username, placeholder: 'Enter Username' %>
+<%= f.text_field :username, class: 'form-control', placeholder: 'Enter Username' %>
 </p>
 <p><%= f.label :password %>
-<%= f.password_field :password, placeholder: 'Enter Password' %>
+<%= f.password_field :password, class: 'form-control', placeholder: 'Enter Password' %>
 </p>
 <p><%= f.label :email %>
-<%= f.email_field :email, placeholder: 'Enter Email' %>
+<%= f.email_field :email, class: 'form-control', placeholder: 'Enter Email' %>
 </p>
 <p><%= f.label :admin %>
 <%= f.check_box :admin %>
 </p>
 <%= f.label "Profile Photo" %>
-<%= f.file_field :profile_photo %><br>
+<%= f.file_field :profile_photo, class: 'form-control' %><br>
 
 <%= f.submit %>
 

@@ -4,7 +4,7 @@
 
 <%= form_tag gigs_path, method: :get do %>
 <%= label_tag(:query, "Find a Gig:") %>
-<%= text_field_tag :query, params[:query] %>
+<%= text_field_tag :query, params[:query], placeholder: 'Search By Title' %>
 <%= submit_tag("Search", :title =>nil) %>
 <% end %>
 
@@ -27,7 +27,8 @@
 <strong>Event Type:</strong> <%= gig.event_type %><br>
 <strong>Location:</strong> <%= "#{gig.city}, #{gig.state}" %><br>
 <strong>Client:</strong> <%=gig.client %><br>
-<strong>Booking Status: </strong><%= gig_user_status(gig_user_id(gig, current_user))%>
+<strong>Booking Status: </strong>
+<div class="container"><%= gig_user_status(gig_user_id(gig, current_user))%></div>
 <%= hidden_field :gig, value: gig.id %>
 <%= link_to 'See More Details', gig_path(gig) %><br><br>
 </div>

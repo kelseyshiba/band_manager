@@ -20,4 +20,12 @@ class User < ApplicationRecord
             u.password = SecureRandom.hex(15)
         end
     end
+
+    def self.search(search)
+        if search
+          @users = User.where("name LIKE ?", "%#{search}%")
+        else
+          @users = User.all
+        end
+    end
 end
