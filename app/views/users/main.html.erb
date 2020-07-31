@@ -1,6 +1,7 @@
 <h1>Main</h1><br>
 <%= flash[:error] %>
 <h2>Hello, <%= current_user.name.split(" ").map(&:capitalize).join(" ") %>!</h2><br>
+<%= profile_photo(current_user) %><br>
 
 <%= link_to 'All Gigs', gigs_path %><br>
 <%= link_to 'My Gigs', user_gigs_path(current_user) %><br>
